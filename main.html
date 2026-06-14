@@ -9,22 +9,19 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			 arr = arr.map(Number); // convert string inputs to numbers
-
-    let first = -Infinity;
+			let first = -Infinity;
     let second = -Infinity;
 
     for (let num of arr) {
         if (num > first) {
             second = first;
             first = num;
-        } else if (num > second && num !== first) {
+        } else if (num > second && num < first) {
             second = num;
         }
     }
 
-    return second === -Infinity ? "No second highest element" : second;
-			
+    return second;
 		}
 
 		function Main() {
